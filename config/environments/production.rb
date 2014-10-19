@@ -48,6 +48,10 @@ Pinteresting::Application.configure do
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
 
+  # Required for Heroku 
+  config.action_mailer.default_url_options = { :host => 'http://ay-pinteresting.herokuapp.com/' }
+
+
   # Use a different logger for distributed setups.
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)
 

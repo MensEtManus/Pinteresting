@@ -23,6 +23,9 @@ Pinteresting::Application.configure do
   config.active_record.migration_error = :page_load
 
   # Debug mode disables concatenation and preprocessing of assets.
+  # required for heroku 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
