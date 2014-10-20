@@ -17,42 +17,32 @@ class PinsController < ApplicationController
 
   def create
     @pin = Pin.new(pin_params)
-    respond_to do |format|
       if @pin.save
-        format.html {redirect_to @pin, notice: 'Pin was successfully created.'}
-        format.json {render action: 'show', status: :created, location: @pin}
+        redirect_to @pin, notice: 'Pin was successfully created.'
       else
-        format.html {render action: 'new'}
-        format.json {render json: @pin.errors, status: :unprocessable_entity}
+        render action: 'new'
       end
-    end
   end
 
   def update
-    respond_to do |format|
-      if @pin.update(pin_params)
-        format.html {redirect_to @pin, notice: 'Pin was successfully updated.'}
-        format.json {head :no_content}
-      else
-        format.html {render action: 'edit'}
-        format.json {render json: @pin.errors, status: :unprocessable_entity }
-      end
+    if @pin.update(pin_params)
+      redirect_to @pin, notice: 'Pin was successfully updated.'
+    else
+      render action: 'edit'
     end
   end
 
   def destroy
     @pin.destroy
-    respond_to do |format|
-      format.html {redirect_to pins_url}
-      format.json {head :no_content}
-    end
+      redirect_to pins_url
   end
 
   private
+    # use callbacks to share common setup or constraints between actions
     def set_pin
       @pin = Pin.find(params[:id])
     end
-
+    # never trust parameters from the scary internet, only allow the while list through
     def pin_params
       params.require(:pin).permit(:description)
     end
