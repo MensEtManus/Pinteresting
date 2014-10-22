@@ -6,7 +6,7 @@ gem 'rails', '~> 4.0.2'
 
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails', '>= 3.2'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -27,7 +27,8 @@ gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~>3.2.0'
+gem 'autoprefixer-rails'
 
 #gem 'activesupport', '~> 4.2.0.beta2'
 gem 'devise', '~> 3.4.0'
@@ -37,6 +38,9 @@ gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '~> 1.56.0'
 
 gem 'masonry-rails', '~> 0.2.1'
+
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
 
 # Use sqlite3 as the database for Active Record
 group :development, :test do 
