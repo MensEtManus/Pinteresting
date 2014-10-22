@@ -5,6 +5,10 @@
   <%= @pin.description %>
 </p>
 <% if @pin.user = current_user %>
+<<<<<<< HEAD
   <%= link_to 'Edit', edit_pin_path(@pin) %> | 
+=======
+  <%= link_to 'Edit', edit_pin_path(@pin) %> 
+>>>>>>> 31290b743f0d9620e831cbe03bcec0abe099c462
 <% end %>
 <%= link_to 'Back', pins_path %>
